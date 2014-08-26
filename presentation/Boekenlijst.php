@@ -28,6 +28,9 @@
                         print($boek->getGenre()
                         ->getOmschrijving());?>
                     </td>
+                    <td>
+                        <a href="verwijderboek.php?id=<?php print($boek->getId());?>">Verwijder</a>
+                    </td>
                 </tr>
             <?php
             }
