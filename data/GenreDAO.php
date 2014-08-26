@@ -15,5 +15,16 @@ class GenreDAO {
         $dbh = null;
         return $lijst;
     }
+    
+    public function getById($id) {
+        $dbh = new PDO(DBConfig::$DB_CONNSTRING,
+        DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+        $sql = "select omschrijving from mvc_genres where id = " . $id;
+        $resultSet = $dbh->query($sql);
+        $rij = $resultSet->fetch();
+        $genre = Genre::create($id, $rij["omschrijving"]);
+        $dbh = null;
+        return $genre;
+    }
 }
 
