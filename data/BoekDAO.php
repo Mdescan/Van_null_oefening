@@ -44,4 +44,11 @@ class BoekDAO {
         $boek = Boek::create($boekId, $titel, $genre);
         return $boek;
     }
+    
+    public function delete($id) {
+        $sql = "delete from mvc_boeken where id = " . $id;
+        $dbh = new PDO(DBConfig::$DB_CONNSTRING,DBConfig::$DB_USERNAME,DBConfig::$DB_PASSWORD);
+        $dbh->exec($sql);
+        $dbh = null;
+    }
 }
