@@ -17,4 +17,3 @@ class BoekService {
         $boekDAO->delete($id);
     }
 }
-
