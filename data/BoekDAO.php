@@ -1,5 +1,5 @@
 <?php
-require_once("data/DBConfig.class.php");
+require_once("data/DBConfig.php");
 require_once("entities/Genre_class.php");
 require_once("entities/Boek_class.php");
 
