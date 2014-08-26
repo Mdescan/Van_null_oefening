@@ -51,4 +51,12 @@ class BoekDAO {
         $dbh->exec($sql);
         $dbh = null;
     }
+    
+    public function update($boek) {
+        $sql = "update mvc_boeken set titel='" . $boek->getTitel() . "', genreid=" . $boek->getGenre()->getId() .
+        " where id = " . $boek->getId();
+        $dbh = new PDO(DBConfig::$DB_CONNSTRING,DBConfig::$DB_USERNAME,DBConfig::$DB_PASSWORD);
+        $dbh->exec($sql);
+        $dbh = null;
+    }
 }
