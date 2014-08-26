@@ -11,5 +11,10 @@ class BoekService {
         $boekDAO = new BoekDAO();
         $boekDAO->create($titel, $genreId);
     }
+    
+    public function verwijderBoek($id) {
+        $boekDAO = new BoekDAO();
+        $boekDAO->delete($id);
+    }
 }
 
