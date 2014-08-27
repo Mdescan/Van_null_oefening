@@ -1,6 +1,7 @@
 <?php
 require_once("business/Genreservice_class.php");
 require_once("business/Boekservice_class.php");
+require_once ("exceptions/TitelbestaatException.php");
 if (isset($_GET["action"]) && $_GET["action"] == "process") {
     $boekSvc = new BoekService();
     $boekSvc->updateBoek($_GET["id"], $_POST["txtTitel"], $_POST["selGenre"]);
