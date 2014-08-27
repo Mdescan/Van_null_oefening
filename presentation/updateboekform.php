@@ -6,6 +6,13 @@
     </head>
     <body>
         <h1>Boek bijwerken</h1>
+        <?php
+        if (isset($error) && $error == "titleexists") {
+        ?>
+            <p style="color: red">Titel bestaat al</p>
+        <?php
+        }
+        ?>
         <form method="post" action="updateboek.php?action=process&id=
             <?php print($boek->getId());?>">
             <table>
